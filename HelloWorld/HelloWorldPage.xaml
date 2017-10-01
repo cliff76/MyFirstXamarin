@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:HelloWorld" x:Class="HelloWorld.HelloWorldPage">
+    <StackLayout>
+        
+        <Label Text="Word of the day!" HorizontalOptions="Start"/>
+        <Button x:name="button"
+            VerticalOptions="Start"
+            HorizontalOptions="Center"
+            Clicked="Handle_Clicked"
+            Text="Hello World"/>
+        <Label Text="Font Size: 16" HorizontalOptions="Start"/>
+        <Slider x:Name="slider" Value="0"/>
+        <Label x:Name="quote" Text="Random quote" 
+            HorizontalOptions="Start"
+        />
+    </StackLayout>
+</ContentPage>
