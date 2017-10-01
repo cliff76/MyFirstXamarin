@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:HelloWorld" 
     x:Class="HelloWorld.HelloWorldPage">
-    <StackLayout>
+    <StackLayout BindingContext="{x:Reference slider}">
         <StackLayout.Padding>
             <OnPlatform x:TypeArguments="Thickness"
                 iOS="0,20,0,0"
@@ -15,14 +15,14 @@
             HorizontalOptions="Center"
             Clicked="Handle_Clicked"
             Text="Next Quote"/>
-        <Label Text="Font Size: 16" HorizontalOptions="Start"/>
+        <Label Text="{Binding Path=Value, StringFormat='Font Size: {0:F0}'}" HorizontalOptions="Start"/>
         <Slider x:Name="slider" 
             Maximum="64.0"
             Minimum="8.0"
             Value="16.0"
         />
         <Label x:Name="quote" Text="Random quote" 
-            FontSize="{Binding Source={x:Reference slider}, Path=Value}"
+            FontSize="{Binding Value}"
             HorizontalOptions="Start"
         />
     </StackLayout>
